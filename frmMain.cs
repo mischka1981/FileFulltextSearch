@@ -117,12 +117,9 @@ namespace FileFulltextSearch {
 
             }
         }
-<<<<<<< HEAD
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             new Kontacts.FileFulltextSearch.AboutBox().ShowDialog();
         }
-=======
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
     }
 }

@@ -39,24 +39,17 @@
             this.lbFiles = new System.Windows.Forms.Label();
             this.chkRecursive = new System.Windows.Forms.CheckBox();
             this.listView1 = new System.Windows.Forms.ListView();
-<<<<<<< HEAD
-=======
-            this.label3 = new System.Windows.Forms.Label();
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-<<<<<<< HEAD
             this.label3 = new System.Windows.Forms.Label();
             this.txtFilePattern = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
             this.txtFilePattern = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -129,12 +122,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-<<<<<<< HEAD
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
-=======
-            this.fileToolStripMenuItem});
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(495, 24);
@@ -220,8 +209,6 @@
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
-<<<<<<< HEAD
-=======
             // label3
             // 
             this.label3.AutoSize = true;
@@ -232,7 +219,6 @@
             this.label3.Text = "Results (double click to open)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             // columnHeader1
             // 
             this.columnHeader1.Text = "Size (KByte)";
@@ -253,7 +239,6 @@
             this.columnHeader4.Text = "Context";
             this.columnHeader4.Width = 162;
             // 
-<<<<<<< HEAD
             // label3
             // 
             this.label3.AutoSize = true;
@@ -264,8 +249,6 @@
             this.label3.Text = "Results (double click to open)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-=======
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             // txtFilePattern
             // 
             this.txtFilePattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -286,7 +269,6 @@
             this.label4.Text = "file pattern";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-<<<<<<< HEAD
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -302,8 +284,6 @@
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-=======
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,11 +341,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox txtFilePattern;
         private System.Windows.Forms.Label label4;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-=======
->>>>>>> bfe11924e4f287673815556ad345c8ae7e7069fd
     }
 }
 
