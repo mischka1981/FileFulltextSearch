@@ -121,5 +121,9 @@ namespace FileFulltextSearch {
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
             new Kontacts.FileFulltextSearch.AboutBox().ShowDialog();
         }
+
+        private void txtFolder_Click(object sender, EventArgs e) {
+            txtFolder.SelectAll();
+        }
     }
 }
