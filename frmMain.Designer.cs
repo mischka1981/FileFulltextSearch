@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFilePattern = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.chkExclBinaries = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,8 @@
             this.txtFolder.TabIndex = 1;
             this.txtFolder.Click += new System.EventHandler(this.txtFolder_Click);
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
+            this.txtFolder.Enter += new System.EventHandler(this.txtFolder_Enter);
+            this.txtFolder.ChangeUICues += new System.Windows.Forms.UICuesEventHandler(this.txtFolder_ChangeUICues);
             // 
             // btSearch
             // 
@@ -273,11 +276,24 @@
             this.label4.Text = "file pattern";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // chkExclBinaries
+            // 
+            this.chkExclBinaries.AutoSize = true;
+            this.chkExclBinaries.Checked = true;
+            this.chkExclBinaries.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkExclBinaries.Location = new System.Drawing.Point(127, 152);
+            this.chkExclBinaries.Name = "chkExclBinaries";
+            this.chkExclBinaries.Size = new System.Drawing.Size(162, 17);
+            this.chkExclBinaries.TabIndex = 14;
+            this.chkExclBinaries.Text = "exclude binaries (dll,exe,pdb)";
+            this.chkExclBinaries.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 390);
+            this.Controls.Add(this.chkExclBinaries);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFilePattern);
             this.Controls.Add(this.label3);
@@ -332,6 +348,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.CheckBox chkExclBinaries;
     }
 }
 

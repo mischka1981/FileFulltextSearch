@@ -90,6 +90,15 @@ namespace FileFulltextSearch {
                 txtFilePattern.Text, 
                 chkRecursive.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly).ToList());
 
+            if (chkExclBinaries.Checked)
+                _files.RemoveAll(f =>
+                   f.Extension.EndsWith("dll")
+                || f.Extension.EndsWith("pdb") 
+                || f.Extension.EndsWith("exe") 
+                || f.Extension.EndsWith("png") 
+                || f.Extension.EndsWith("jpg")
+                || f.Extension.EndsWith("jpeg"));
+
             foreach (var dii in di.GetDirectories()) {
                 try {
                     ScanDir(dii.FullName);
@@ -124,6 +133,14 @@ namespace FileFulltextSearch {
 
         private void txtFolder_Click(object sender, EventArgs e) {
             txtFolder.SelectAll();
+        }
+
+        private void txtFolder_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void txtFolder_ChangeUICues(object sender, UICuesEventArgs e) {
+
         }
     }
 }
