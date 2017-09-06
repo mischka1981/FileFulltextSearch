@@ -1,4 +1,5 @@
-﻿namespace FileFulltextSearch {
+﻿
+namespace Kontacts.FileFulltextSearch {
     partial class frmMain {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -49,6 +50,7 @@
             this.txtFilePattern = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chkExclBinaries = new System.Windows.Forms.CheckBox();
+            this.chkExcludeDotted = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,8 +75,6 @@
             this.txtFolder.TabIndex = 1;
             this.txtFolder.Click += new System.EventHandler(this.txtFolder_Click);
             this.txtFolder.TextChanged += new System.EventHandler(this.txtFolder_TextChanged);
-            this.txtFolder.Enter += new System.EventHandler(this.txtFolder_Enter);
-            this.txtFolder.ChangeUICues += new System.Windows.Forms.UICuesEventHandler(this.txtFolder_ChangeUICues);
             // 
             // btSearch
             // 
@@ -223,7 +223,6 @@
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // columnHeader1
@@ -288,11 +287,24 @@
             this.chkExclBinaries.Text = "exclude binaries (dll,exe,pdb)";
             this.chkExclBinaries.UseVisualStyleBackColor = true;
             // 
+            // chkExcludeDotted
+            // 
+            this.chkExcludeDotted.AutoSize = true;
+            this.chkExcludeDotted.Checked = true;
+            this.chkExcludeDotted.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkExcludeDotted.Location = new System.Drawing.Point(328, 152);
+            this.chkExcludeDotted.Name = "chkExcludeDotted";
+            this.chkExcludeDotted.Size = new System.Drawing.Size(133, 17);
+            this.chkExcludeDotted.TabIndex = 15;
+            this.chkExcludeDotted.Text = "exclude .dotted folders";
+            this.chkExcludeDotted.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 390);
+            this.Controls.Add(this.chkExcludeDotted);
             this.Controls.Add(this.chkExclBinaries);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFilePattern);
@@ -349,6 +361,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkExclBinaries;
+        private System.Windows.Forms.CheckBox chkExcludeDotted;
     }
 }
 

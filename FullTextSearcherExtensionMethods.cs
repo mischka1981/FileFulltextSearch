@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
-namespace FileFulltextSearch {
+namespace Kontacts.FileFulltextSearch {
     public static class FullTextSearcherExtensionMethods {
 
         /// <summary>
@@ -27,5 +29,25 @@ namespace FileFulltextSearch {
             }
         }
 
-    }
+        public static Dictionary<string,string> Xml2Dictionary(this string xml) {
+            var xdoc = XDocument.Parse(xml);
+            var dictionary = new Dictionary<string, string>();
+            var rootElement = xdoc.Nodes().First() as System.Xml.Linq.XElement;
+            var settinx = rootElement.Nodes().ToList();
+
+            foreach (System.Xml.Linq.XElement node in settinx) {  //
+                dictionary[node.Name.ToString()] = node.Value;
+            }
+            return dictionary;
+        }
+
+        public static string ToXML(this Dictionary<string, string> inputDict) {
+
+
+            var xdoc = new XDocument(new XElement("root",
+                inputDict.Select(entry => new XElement(entry.Key, entry.Value))));
+
+            return xdoc.ToString();
+        }
+        }
 }

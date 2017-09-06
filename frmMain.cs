@@ -9,14 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace FileFulltextSearch {
+namespace Kontacts.FileFulltextSearch {
     public partial class frmMain : Form {
+
+        List<FileInfo> _files;
+
         public frmMain() {
             InitializeComponent();
         }
-
- 
 
         private void btSearch_Click(object sender, EventArgs e) {
             toolStripStatusLabel1.Text = "Searching...";
@@ -45,7 +47,6 @@ namespace FileFulltextSearch {
                 System.Windows.Forms.Application.DoEvents();
             }
             toolStripStatusLabel1.Text = "ready.";
-
         }
 
      
@@ -59,22 +60,22 @@ namespace FileFulltextSearch {
             }
 
             ScanDir();
-
         }
 
         private void exitrToolStripMenuItem_Click(object sender, EventArgs e) {
             Application.Exit();
         }
  
-
         private void frmMain_Load(object sender, EventArgs e) {
-            txtFolder.Text = Environment.CurrentDirectory;
+            var folder = new MySettings().GetSetting("folder");
+            txtFolder.Text = string.IsNullOrWhiteSpace(folder) ? Environment.CurrentDirectory : folder;
         }
 
         private void txtFolder_TextChanged(object sender, EventArgs e) {
+            new MySettings().SaveSetting("folder", txtFolder.Text);
         }
 
-        List<FileInfo> _files;
+      
 
         private void ScanDir(string dir = null) {
             bool topCall = dir == null;
@@ -85,7 +86,11 @@ namespace FileFulltextSearch {
             var di = new DirectoryInfo(dir);
 
             System.Windows.Forms.Application.DoEvents();
-            
+
+            if (chkExcludeDotted.Checked) {
+                if (dir.Trim().StartsWith(".")) return;
+            }
+
             _files.AddRange( di.EnumerateFiles(
                 txtFilePattern.Text, 
                 chkRecursive.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly).ToList());
@@ -101,7 +106,8 @@ namespace FileFulltextSearch {
 
             foreach (var dii in di.GetDirectories()) {
                 try {
-                    ScanDir(dii.FullName);
+                    if (chkRecursive.Checked)
+                        ScanDir(dii.FullName);
                 } catch (UnauthorizedAccessException ae) {
                     statusStrip1.Text = "Unauthorized to read " + dii.Name;
                 }
@@ -109,10 +115,6 @@ namespace FileFulltextSearch {
 
             if (topCall)
                 lbFiles.Text = $"Selected {_files.Count()} files.";
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
-
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e) {
@@ -135,12 +137,5 @@ namespace FileFulltextSearch {
             txtFolder.SelectAll();
         }
 
-        private void txtFolder_Enter(object sender, EventArgs e) {
-
-        }
-
-        private void txtFolder_ChangeUICues(object sender, UICuesEventArgs e) {
-
-        }
     }
 }

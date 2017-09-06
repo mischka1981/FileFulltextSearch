@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>FileFulltextSearch.Program</StartupObject>
+    <StartupObject>Kontacts.FileFulltextSearch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>520AA30668D4524291A685EF3CB82A6FFF4A2677</ManifestCertificateThumbprint>
@@ -91,6 +91,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FullTextSearcherExtensionMethods.cs" />
+    <Compile Include="MySettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">

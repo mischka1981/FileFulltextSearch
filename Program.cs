@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FileFulltextSearch {
+namespace Kontacts.FileFulltextSearch {
     static class Program {
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
